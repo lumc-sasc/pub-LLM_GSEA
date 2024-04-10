@@ -1,2 +1,9 @@
-Repository for testing the performance of GPT4 and open source language models on a GSEA task
+# Repository for testing the performance of GPT4 and open source language models on a GSEA task
 
+## Pipeline
+
+## Requirements
+
+### Conda packages
+
+## Usage
