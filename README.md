@@ -51,9 +51,7 @@ conda activate run_models_sasc
 
 `generate_gpt4.py`
 
-Variables to be set:
-
-`In function main`
+In function main
 
 Define which path the script takes by setting the variable compare
 ```
