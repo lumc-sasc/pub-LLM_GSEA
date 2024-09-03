@@ -1,36 +1,14 @@
 # Pub-LLM_GSEA
 Repository for testing the performance of GPT4 and open source language models on a GSEA task
 
-## Workflow
-Set OPENAI API Key in BASH:
-```
-echo "export OPENAI_API_KEY=<PLACEHOLDER>" >> ~/.zshrc
-
-source ~/.zshrc
-
-echo $OPENAI_API_KEY
-```
-Activate Conda environment:
-```
-conda --version
-```
-`conda 23.10.0`
-
-Generate GPT4 ground truth
-
-Test performance of local models
-
-Inspect plots
-
-Make training data
-
-Train models
-
-Test performance again
-
-Inspect plots
-
 ### Dependencies
+Install Conda
+```
+mkdir -p ~/miniconda3
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh
+bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3
+rm -rf ~/miniconda3/miniconda.sh
+```
 Create Conda environment
 ```
 conda create -n run_models_sasc python=3.11.6
@@ -49,6 +27,20 @@ conda install -c conda-forge datasets=2.14.7
 ```
 
 ## Usage
+Set OPENAI API Key in BASH:
+```
+echo "export OPENAI_API_KEY=<PLACEHOLDER>" >> ~/.zshrc
+
+source ~/.zshrc
+
+echo $OPENAI_API_KEY
+```
+Activate Conda environment:
+```
+conda activate run_models_sasc
+```
+`conda 23.10.0`
+
 ### Testing consistency of prompts with GPT API
 
 `testing_multi.py`
