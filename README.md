@@ -93,27 +93,29 @@ content_list_removed: a dictionary where the key is the indicator of the prompt 
 
 `testing_multi.py`
 
-In function variables(), this variable can be set to choose which dictionary of models gets returned
+In function variables(), a dictionary gets returned with all the models that get tested
+One such dictionary looks like this:
 ```
-WRITE MORE HERE, HOW TO ADD MODELS WHICH HAVE BEEN FINE-TUNED
-return models1
+    models1={
+        "BioGPT-large": "/exports/sascstudent/svanderwal2/programs/test_new_models/BioGPT-Large",
+        "PubMedQA": "/exports/sascstudent/svanderwal2/programs/test_new_models/BioGPT-Large-PubMedQA",
+        "biogpt": "/exports/sascstudent/svanderwal2/programs/test_new_models/biogpt",
+        "BioMedLM": "/exports/sascstudent/svanderwal2/programs/test_new_models/BioMedLM",
+        "BioMedGPT": "/exports/sascstudent/svanderwal2/programs/test_new_models/BioMedGPT-LM-7B"
+    }
 ```
-Set where to save the plots created and which title they should have
+Every key is the name of the model tested, and the value the path of the model.
+So if a new model is fine-tuned, add this model with path to an existing dictionary, or create a new one.
+In this function, the prompt and gene sets used for testing are also set:
 ```
-file_line = "line_all.png"
-title_line = "Performance of 5 local models on a GSEA task, 1 iterations"
-file_bar = "bar_all.png"
-title_bar = "Performance of 5 local models on a GSEA task, 1 iterations"
+prompt_og: string variable which contains the prompt
+nested_list: nested list of genes which contains the genes tested
 ```
-Set variable for the file which contains the ground truth
-```
-file_n = "/exports/sascstudent/svanderwal2/programs/test_new_models/gpt_ground_truth.txt"
-```
+This function takes the variable `test` which is set in `main`, this dictates which dictionary gets returned.
 
-This script generates a file to manually check result from local model vs ground truth
-```
-file_write = "testing_multi_result_gpt4_vs_local.csv"
-```
+In function main, the variable `test` can be set, which dictates which path the script takes.
+This variable is a list into which multiple or one string(s) can be put: `5base, 8structures, custom_onegene_morepaths or custom_pathgenedesc`
+
 This script also generates two plots for visually inspecting performance of local models
 ```
 file_line = "line_all.png"
