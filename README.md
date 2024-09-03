@@ -10,7 +10,7 @@ source ~/.zshrc
 
 echo $OPENAI_API_KEY
 ```
-Install Conda and create conda environment:
+Activate Conda environment:
 ```
 conda --version
 ```
