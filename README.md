@@ -46,7 +46,8 @@ conda activate run_models_sasc
 ### Testing consistency of prompts with GPT API
 
 `testing_multi.py`
-In function variables() this variable can be set to choose which dictionary of models gets returned
+
+In function variables(), this variable can be set to choose which dictionary of models gets returned
 ```
 return models1
 ```
