@@ -23,9 +23,12 @@ conda install -c conda-forge openai=1.14.1
 conda install -c conda-forge pytorch=2.1.2
 conda install -c conda-forge sentence-transformers=2.5.1
 conda install -c conda-forge datasets=2.14.7
-
 ```
 
+Download repository
+```
+git clone https://github.com/lumc-sasc/pub-LLM_GSEA.git
+```
 ## Usage
 Set OPENAI API Key in BASH:
 ```
@@ -39,12 +42,11 @@ Activate Conda environment:
 ```
 conda activate run_models_sasc
 ```
-`conda 23.10.0`
 
 ### Testing consistency of prompts with GPT API
 
 `testing_multi.py`
-In function variables()
+In function variables() this variable can be set to choose which dictionary of models gets returned
 ```
 return models1
 ```
