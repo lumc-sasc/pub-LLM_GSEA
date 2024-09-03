@@ -47,23 +47,7 @@ Activate Conda environment:
 conda activate run_models_sasc
 ```
 
-### Testing consistency of prompts with GPT API
-
-`testing_multi.py`
-
-In function variables(), this variable can be set to choose which dictionary of models gets returned
-```
-return models1
-```
-Set where to save the plots created and which title they should have
-```
-file_line = "line_all.png"
-title_line = "Performance of 5 local models on a GSEA task, 1 iterations"
-file_bar = "bar_all.png"
-title_bar = "Performance of 5 local models on a GSEA task, 1 iterations"
-```
-
-### Generating GPT4 ground truth using API
+### Generating GPT4 ground truth and testing consistency of prompts using API
 
 `generate_gpt4.py`
 
@@ -106,7 +90,23 @@ nested_list: nested list of gene sets.
 content_list_removed: a dictionary where the key is the indicator of the prompt and the value is the prompt.
 ```
 
+
 ### Testing performance of local models
+
+`testing_multi.py`
+
+In function variables(), this variable can be set to choose which dictionary of models gets returned
+```
+WRITE MORE HERE, HOW TO ADD MODELS WHICH HAVE BEEN FINE-TUNED
+return models1
+```
+Set where to save the plots created and which title they should have
+```
+file_line = "line_all.png"
+title_line = "Performance of 5 local models on a GSEA task, 1 iterations"
+file_bar = "bar_all.png"
+title_bar = "Performance of 5 local models on a GSEA task, 1 iterations"
+```
 Set variable for the file which contains the ground truth
 ```
 file_n = "/exports/sascstudent/svanderwal2/programs/test_new_models/gpt_ground_truth.txt"
@@ -123,3 +123,7 @@ title_line = "Performance of 5 local models on a GSEA task, 1 iterations"
 file_bar = "bar_all.png"
 title_bar = "Performance of 5 local models on a GSEA task, 1 iterations"
 ```
+
+### Generate training data
+
+### Fine-tuning a model
