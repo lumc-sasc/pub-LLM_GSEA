@@ -114,15 +114,8 @@ nested_list: nested list of genes which contains the genes tested
 This function takes the variable `test` which is set in `main`, this dictates which dictionary gets returned.
 
 In function main, the variable `test` can be set, which dictates which path the script takes.
-This variable is a list into which multiple or one string(s) can be put: `5base, 8structures, custom_onegene_morepaths or custom_pathgenedesc`
+This variable is a list into which multiple or one string(s) can be put: `5base, 8structures, custom_onegene_morepaths or custom_pathgenedesc`. Every string dictates a different set of models that gets tested and sets variables where results get saved.
 
-This script also generates two plots for visually inspecting performance of local models
-```
-file_line = "line_all.png"
-title_line = "Performance of 5 local models on a GSEA task, 1 iterations"
-file_bar = "bar_all.png"
-title_bar = "Performance of 5 local models on a GSEA task, 1 iterations"
-```
 
 ### Generate training data
 
