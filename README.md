@@ -23,6 +23,10 @@ conda install -c conda-forge openai=1.14.1
 conda install -c conda-forge pytorch=2.1.2
 conda install -c conda-forge sentence-transformers=2.5.1
 conda install -c conda-forge datasets=2.14.7
+csv
+json
+pandas
+scipy
 ```
 
 Download repository
@@ -61,11 +65,45 @@ title_bar = "Performance of 5 local models on a GSEA task, 1 iterations"
 
 ### Generating GPT4 ground truth using API
 
-`generate_gpt.py`
+`generate_gpt4.py`
 
-The ground truth is saved in a dictionary and written away in a file set with:
+Variables to be set:
+
+`In function main`
+
+Define which path the script takes by setting the variable compare
 ```
-file_save = "gpt_ground_truth.txt"
+compare = 1
+- tests consistency of prompts, does all calculations
+compare = 2
+- makes ground truth set
+compare = 3
+- makes a plot for the scores calculated when compare = 1
+```
+Prompt to be used for making the ground truth data set can be set in function `make_truthset`
+```
+prompt = """
+    You are an efficient and insightful assistant to a molecular biologist
+
+    Write a critical analysis of the biological processes performed
+    by this system of interacting proteins. Propose a brief name
+    for the top 10 most prominent biological processes performed by the system
+
+    Put the name at the top of the analysis as 'Process: <name>
+
+    Be concise, do not use unnecessary words. Be specific; avoid overly general
+    statements such as 'the proteins are involved in various cellular processes'
+    Be factual; do not editorialize.
+    For each important point, describe your reasoning and supporting information.
+
+    Here are the interacting proteins: %s
+  """
+```
+
+Prompts and genes to be used for testing consistency of prompts can be set in function `vars`
+```
+nested_list: nested list of gene sets.
+content_list_removed: a dictionary where the key is the indicator of the prompt and the value is the prompt.
 ```
 
 ### Testing performance of local models
